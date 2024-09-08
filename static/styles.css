@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  height: 100vh;
+}
+
+.house__form {
+  @apply w-full grid grid-cols-6 2xl:grid-rows-[1fr_3rem] gap-4;
+}
+.house__form fieldset {
+  @apply border border-black col-span-2 2xl:col-span-1 pt-2 pb-4 px-4 flex flex-col gap-2;
+}
+.house__form legend {
+  @apply bg-black text-white py-1 px-2;
+}
+.house__form label {
+  @apply flex flex-col gap-1;
+}
+.house__form label.row {
+  @apply flex flex-row justify-between;
+}
+.house__form input,
+.house__form textarea {
+  @apply p-2 rounded;
+}
+.house__form label.row {
+  @apply pb-1 border-b border-b-green-700 items-center;
+}
+.house__form .fieldgroup {
+  @apply flex flex-row gap-4 items-center;
+}
+.house__form .fieldgroup > * {
+  @apply flex flex-row gap-2;
+}
+.house__form input[type="submit"] {
+  @apply px-16 py-2 rounded border border-black font-bold bg-white hover:text-white hover:bg-green-700 uppercase cursor-pointer;
+}
+.house__form label:has(input[required]) {
+  ::after {
+    content: " *";
+    color: red;
+  }
+}
+
+.house__table {
+  @apply w-full table-auto border-spacing-1;
+}
+.house__table th {
+  @apply border border-slate-600 bg-blue-200;
+}
+.house__table td {
+  @apply border border-slate-700 bg-white py-2 px-1;
+}
+.house__table select {
+  @apply px-4 py-1 rounded;
+}
